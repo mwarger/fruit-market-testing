@@ -9,21 +9,8 @@ import {
 } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Fruit } from './types';
 
-export type Fruit = {
-	genus: string;
-	name: string;
-	id: number;
-	family: string;
-	order: string;
-	nutritions: {
-		carbohydrates: number;
-		protein: number;
-		fat: number;
-		calories: number;
-		sugar: number;
-	};
-};
 
 export function ProductItem() {
 	const { productId } = useParams();

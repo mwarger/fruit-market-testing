@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useCartContext } from './CartContext';
-import { Product } from './Product';
+import { Product } from './types';
 
 const products: Array<Product> = [
 	{

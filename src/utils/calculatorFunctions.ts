@@ -1,4 +1,4 @@
-import { ProductWithQuantity } from '../Product';
+import { ProductWithQuantity } from '../types';
 
 // takes quantity and price and returns the total price
 export function calculatePrice(quantity: number, price: number): number {

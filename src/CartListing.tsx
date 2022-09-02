@@ -1,6 +1,6 @@
 import { CloseOutlined } from '@mui/icons-material';
 import { List, ListItem, IconButton, ListItemText, Stack } from '@mui/material';
-import { Product, ProductWithQuantity } from './Product';
+import { Product, ProductWithQuantity } from './types';
 import { QuantityNumberInput } from './QuantityNumberInput';
 import { calculatePrice } from './utils/calculatorFunctions';
 

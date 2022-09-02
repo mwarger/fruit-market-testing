@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product, ProductWithQuantity } from './Product';
+import { Product, ProductWithQuantity } from './types';
 
 export type CartContextProps = {
 	cartItems: Array<ProductWithQuantity>;

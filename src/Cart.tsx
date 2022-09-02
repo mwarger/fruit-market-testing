@@ -1,7 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 import { useCartContext } from './CartContext';
 import { CartListing } from './CartListing';
-import { Product, ProductWithQuantity } from './Product';
+import { Product, ProductWithQuantity } from './types';
 import { calculateTotalPrice } from './utils/calculatorFunctions';
 
 export function Cart() {
