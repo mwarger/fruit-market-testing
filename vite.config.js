@@ -9,4 +9,12 @@ export default defineConfig({
 		environment: 'jsdom',
 		setupFiles: 'src/setupTests.ts',
 	},
+	server: {
+		proxy: {
+			'/api/fruit': {
+				target: 'https://www.fruityvice.com',
+				changeOrigin: true,
+			},
+		},
+	},
 });

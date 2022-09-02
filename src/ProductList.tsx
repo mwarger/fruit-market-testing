@@ -1,5 +1,12 @@
 import { AddCircleOutline } from '@mui/icons-material';
-import { List, ListItem, IconButton, ListItemText } from '@mui/material';
+import {
+	List,
+	ListItem,
+	IconButton,
+	ListItemText,
+	ListItemButton,
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 import { useCartContext } from './CartContext';
 import { Product } from './Product';
 
@@ -13,6 +20,16 @@ const products: Array<Product> = [
 		id: '2',
 		name: 'Banana',
 		price: 1.0,
+	},
+	{
+		id: '3',
+		name: 'Orange',
+		price: 3.0,
+	},
+	{
+		id: '4',
+		name: 'Pineapple',
+		price: 4.0,
 	},
 ];
 
@@ -49,7 +66,12 @@ export function ProductList() {
 								</IconButton>
 							}
 						>
-							<ListItemText primary={product.name} secondary={priceFormatted} />
+							<ListItemButton component={Link} to={product.name.toLowerCase()}>
+								<ListItemText
+									primary={product.name}
+									secondary={priceFormatted}
+								/>
+							</ListItemButton>
 						</ListItem>
 					);
 				})}
