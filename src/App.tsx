@@ -4,7 +4,7 @@ import { Cart } from './Cart';
 import { CartProvider } from './CartContext';
 import { Layout } from './Layout';
 import { ProductItem } from './ProductItem';
-import { ProductList } from './ProductList';
+import { FruitList } from './ProductList';
 
 function App() {
 	return (
@@ -12,7 +12,7 @@ function App() {
 			<Layout>
 				<Routes>
 					<Route path='/' element={<Navigate to={'/product-list'} />} />
-					<Route path='/product-list' element={<ProductList />} />
+					<Route path='/product-list' element={<FruitList />} />
 					<Route path='/product-list/:productId' element={<ProductItem />} />
 					<Route path='/cart' element={<Cart />} />
 				</Routes>

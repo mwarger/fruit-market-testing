@@ -1,12 +1,14 @@
-export type Product = {
+export type FruitMarketItem = {
 	id: string;
 	name: string;
 	price: number;
 };
 
-export type ProductWithQuantity = Product & { quantity: number };
+export type FruitMarketItemWithQuantity = FruitMarketItem & {
+	quantity: number;
+};
 
-export type Fruit = {
+export type FruitApiItem = {
 	genus: string;
 	name: string;
 	id: number;

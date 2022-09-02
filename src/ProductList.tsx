@@ -8,9 +8,9 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useCartContext } from './CartContext';
-import { Product } from './types';
+import { FruitMarketItem } from './types';
 
-const products: Array<Product> = [
+const fruits: Array<FruitMarketItem> = [
 	{
 		id: '1',
 		name: 'Apple',
@@ -33,44 +33,41 @@ const products: Array<Product> = [
 	},
 ];
 
-export function ProductList() {
+export function FruitList() {
 	const { addToCart } = useCartContext();
-	const handleAddToCart = (product: Product) => {
-		addToCart(product);
+	const handleAddToCart = (fruit: FruitMarketItem) => {
+		addToCart(fruit);
 	};
 
 	return (
 		<>
-			<h2>Product List</h2>
+			<h2>Produce List</h2>
 
 			<List>
-				{products.map(product => {
+				{fruits.map(fruit => {
 					// format price
-					const price = product.price.toFixed(2);
+					const price = fruit.price.toFixed(2);
 
 					// add currency symbol
 					const priceFormatted = `$${price}`;
 
 					return (
 						<ListItem
-							key={product.id}
+							key={fruit.id}
 							secondaryAction={
 								<IconButton
 									edge='end'
 									aria-label='delete'
 									onClick={() => {
-										handleAddToCart(product);
+										handleAddToCart(fruit);
 									}}
 								>
 									<AddCircleOutline />
 								</IconButton>
 							}
 						>
-							<ListItemButton component={Link} to={product.name.toLowerCase()}>
-								<ListItemText
-									primary={product.name}
-									secondary={priceFormatted}
-								/>
+							<ListItemButton component={Link} to={fruit.name.toLowerCase()}>
+								<ListItemText primary={fruit.name} secondary={priceFormatted} />
 							</ListItemButton>
 						</ListItem>
 					);

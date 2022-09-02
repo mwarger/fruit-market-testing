@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { CartContextProps, CartProvider } from './CartContext';
-import { ProductList } from './ProductList';
+import { FruitList } from './ProductList';
 
 const cartContextRender = (
 	ui: React.ReactNode,
@@ -33,7 +33,7 @@ test('should show products', () => {
 		],
 	};
 
-	cartContextRender(<ProductList />, { providerProps });
+	cartContextRender(<FruitList />, { providerProps });
 
 	const apple = screen.getByText('Apple');
 	const banana = screen.getByText('Banana');

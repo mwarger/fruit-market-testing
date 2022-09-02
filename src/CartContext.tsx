@@ -1,11 +1,11 @@
 import React from 'react';
-import { Product, ProductWithQuantity } from './types';
+import { FruitMarketItem, FruitMarketItemWithQuantity } from './types';
 
 export type CartContextProps = {
-	cartItems: Array<ProductWithQuantity>;
-	addToCart: (product: Product) => void;
-	removeFromCart: (product: Product) => void;
-	updateProductQuantity: (product: Product, quantity: number) => void;
+	cartItems: Array<FruitMarketItemWithQuantity>;
+	addToCart: (product: FruitMarketItem) => void;
+	removeFromCart: (product: FruitMarketItem) => void;
+	updateProductQuantity: (product: FruitMarketItem, quantity: number) => void;
 };
 
 export const CartContext = React.createContext<CartContextProps | undefined>(
@@ -15,11 +15,11 @@ export const CartContext = React.createContext<CartContextProps | undefined>(
 export const CartConsumer = CartContext.Consumer;
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-	const [cartItems, setCartItems] = React.useState<Array<ProductWithQuantity>>(
-		[]
-	);
+	const [cartItems, setCartItems] = React.useState<
+		Array<FruitMarketItemWithQuantity>
+	>([]);
 
-	const addToCart = (product: Product) => {
+	const addToCart = (product: FruitMarketItem) => {
 		console.log('addToCart', product);
 
 		const existingProduct = cartItems.find(item => item.id === product.id);
@@ -37,7 +37,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 		}
 	};
 
-	const removeFromCart = (product: Product) => {
+	const removeFromCart = (product: FruitMarketItem) => {
 		console.log('removeFromCart', product);
 
 		setCartItems(prevCartItems =>
@@ -45,7 +45,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 		);
 	};
 
-	const updateProductQuantity = (product: Product, quantity: number) => {
+	const updateProductQuantity = (
+		product: FruitMarketItem,
+		quantity: number
+	) => {
 		console.log('updateProductQuantity', product, quantity);
 
 		setCartItems(prevCartItems =>

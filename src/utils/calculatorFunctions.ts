@@ -1,4 +1,4 @@
-import { ProductWithQuantity } from '../types';
+import { FruitMarketItemWithQuantity } from '../types';
 
 // takes quantity and price and returns the total price
 export function calculatePrice(quantity: number, price: number): number {
@@ -6,7 +6,9 @@ export function calculatePrice(quantity: number, price: number): number {
 }
 
 // takes an array of products and returns the total price
-export function calculateTotalPrice(products: ProductWithQuantity[]): number {
+export function calculateTotalPrice(
+	products: FruitMarketItemWithQuantity[]
+): number {
 	return products.reduce((total, product) => {
 		return total + calculatePrice(product.quantity, product.price);
 	}, 0);

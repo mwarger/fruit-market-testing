@@ -1,6 +1,6 @@
 import { CloseOutlined } from '@mui/icons-material';
 import { List, ListItem, IconButton, ListItemText, Stack } from '@mui/material';
-import { Product, ProductWithQuantity } from './types';
+import { FruitMarketItem, FruitMarketItemWithQuantity } from './types';
 import { QuantityNumberInput } from './QuantityNumberInput';
 import { calculatePrice } from './utils/calculatorFunctions';
 
@@ -9,9 +9,9 @@ export function CartListing({
 	removeFromCart,
 	updateProductQuantity,
 }: {
-	cartItems: Array<ProductWithQuantity>;
-	removeFromCart: (product: Product) => void;
-	updateProductQuantity: (product: Product, quantity: number) => void;
+	cartItems: Array<FruitMarketItemWithQuantity>;
+	removeFromCart: (product: FruitMarketItem) => void;
+	updateProductQuantity: (product: FruitMarketItem, quantity: number) => void;
 }) {
 	return (
 		<>
