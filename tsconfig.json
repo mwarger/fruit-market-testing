@@ -1,6 +1,0 @@
-{
-	"extends": "@tsconfig/vite-react/tsconfig.json",
-	"compilerOptions": {
-		"types": ["vite/client", "@testing-library/jest-dom"]
-	}
-}

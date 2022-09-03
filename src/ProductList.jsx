@@ -8,9 +8,8 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useCartContext } from './CartContext';
-import { FruitMarketItem } from './types';
 
-const fruits: Array<FruitMarketItem> = [
+const fruits = [
 	{
 		id: '1',
 		name: 'Apple',
@@ -35,7 +34,7 @@ const fruits: Array<FruitMarketItem> = [
 
 export function FruitList() {
 	const { addToCart } = useCartContext();
-	const handleAddToCart = (fruit: FruitMarketItem) => {
+	const handleAddToCart = fruit => {
 		addToCart(fruit);
 	};
 

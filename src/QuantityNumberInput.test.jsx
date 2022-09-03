@@ -11,7 +11,7 @@ test('should change value', () => {
 
 	expect(mockFunction).toHaveBeenCalledTimes(0);
 
-	const input = screen.getByLabelText('Quantity') as HTMLInputElement;
+	const input = screen.getByLabelText('Quantity');
 
 	expect(input.value).toBe('1');
 

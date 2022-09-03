@@ -3,17 +3,14 @@ import { expect, test } from 'vitest';
 import { Cart } from './Cart';
 import { CartContextProps, CartProvider } from './CartContext';
 
-const cartContextRender = (
-	ui: React.ReactNode,
-	{ providerProps, ...renderOptions }: any
-) => {
+const cartContextRender = (ui, { providerProps, ...renderOptions }) => {
 	return render(<CartProvider {...providerProps}>{ui}</CartProvider>, {
 		...renderOptions,
 	});
 };
 
 test('should show cart items', () => {
-	const providerProps: CartContextProps = {
+	const providerProps = {
 		addToCart: () => {},
 		removeFromCart: () => {},
 		updateProductQuantity: () => {},
@@ -41,7 +38,7 @@ test('should show cart items', () => {
 });
 
 test('should show message if cart is empty', () => {
-	const providerProps: CartContextProps = {
+	const providerProps = {
 		addToCart: () => {},
 		removeFromCart: () => {},
 		updateProductQuantity: () => {},

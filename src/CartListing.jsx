@@ -1,6 +1,5 @@
 import { CloseOutlined } from '@mui/icons-material';
 import { List, ListItem, IconButton, ListItemText, Stack } from '@mui/material';
-import { FruitMarketItem, FruitMarketItemWithQuantity } from './types';
 import { QuantityNumberInput } from './QuantityNumberInput';
 import { calculatePrice } from './utils/calculatorFunctions';
 
@@ -8,10 +7,6 @@ export function CartListing({
 	cartItems,
 	removeFromCart,
 	updateProductQuantity,
-}: {
-	cartItems: Array<FruitMarketItemWithQuantity>;
-	removeFromCart: (product: FruitMarketItem) => void;
-	updateProductQuantity: (product: FruitMarketItem, quantity: number) => void;
 }) {
 	return (
 		<List>
@@ -58,7 +53,7 @@ export function CartListing({
 								primary={
 									<QuantityNumberInput
 										value={product.quantity}
-										onChange={(value: number) => {
+										onChange={value => {
 											if (value > 0) {
 												updateProductQuantity(product, value);
 											}

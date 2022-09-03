@@ -1,13 +1,12 @@
 import { Stack, Typography } from '@mui/material';
 import { useCartContext } from './CartContext';
 import { CartListing } from './CartListing';
-import { FruitMarketItem, FruitMarketItemWithQuantity } from './types';
 import { calculateTotalPrice } from './utils/calculatorFunctions';
 
 export function Cart() {
 	const { cartItems, removeFromCart, updateProductQuantity } = useCartContext();
 
-	function handleRemoveFromCart(product: FruitMarketItem) {
+	function handleRemoveFromCart(product) {
 		removeFromCart(product);
 	}
 
@@ -30,11 +29,7 @@ export function Cart() {
 	);
 }
 
-function TotalPriceDisplay({
-	cartItems,
-}: {
-	cartItems: Array<FruitMarketItemWithQuantity>;
-}) {
+function TotalPriceDisplay({ cartItems }) {
 	const totalPrice = calculateTotalPrice(cartItems);
 
 	return (

@@ -21,7 +21,7 @@ const navItems = [
 	{ title: 'Cart', to: '/cart', icon: <ShoppingListIcon /> },
 ];
 
-export function Layout(props: { children: React.ReactNode }) {
+export function Layout(props) {
 	return (
 		<Box sx={{ display: 'flex' }}>
 			<CssBaseline />

@@ -9,12 +9,11 @@ import {
 } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { FruitApiItem } from './types';
 
 export function ProductItem() {
 	const { productId } = useParams();
 
-	const [product, setProduct] = React.useState<FruitApiItem | null>(null);
+	const [product, setProduct] = (React.useState < FruitApiItem) | (null > null);
 
 	useEffect(() => {
 		if (!productId) {

@@ -1,14 +1,6 @@
 import { TextField } from '@mui/material';
 
-export function QuantityNumberInput({
-	label,
-	value,
-	onChange,
-}: {
-	label: string;
-	value: number;
-	onChange: (value: number) => void;
-}) {
+export function QuantityNumberInput({ label, value, onChange }) {
 	return (
 		<>
 			<TextField

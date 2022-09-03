@@ -1,13 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { expect, test } from 'vitest';
-import { CartContextProps, CartProvider } from './CartContext';
+import { CartProvider } from './CartContext';
 import { FruitList } from './ProductList';
 
-const cartContextRender = (
-	ui: React.ReactNode,
-	{ providerProps, ...renderOptions }: any
-) => {
+const cartContextRender = (ui, { providerProps, ...renderOptions }) => {
 	return render(
 		<MemoryRouter>
 			<CartProvider {...providerProps}>{ui}</CartProvider>
@@ -19,7 +16,7 @@ const cartContextRender = (
 };
 
 test('should show products', () => {
-	const providerProps: CartContextProps = {
+	const providerProps = {
 		addToCart: () => {},
 		removeFromCart: () => {},
 		updateProductQuantity: () => {},
