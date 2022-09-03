@@ -5,13 +5,13 @@ import { CartListing } from './CartListing';
 const cartItems = [
 	{
 		id: '1',
-		name: 'Product 1',
+		name: 'Banana',
 		price: 10,
 		quantity: 1,
 	},
 	{
 		id: '2',
-		name: 'Product 2',
+		name: 'Orange',
 		price: 20,
 		quantity: 1,
 	},
@@ -30,10 +30,10 @@ test('should show products', () => {
 	);
 
 	// get the first product name
-	const product1 = screen.getByText('Product 1');
+	const product1 = screen.getByText('Banana');
 
 	// get the second product name
-	const product2 = screen.getByText('Product 2');
+	const product2 = screen.getByText('Orange');
 
 	// check if the product name is in the document
 	expect(product1).toBeInTheDocument();

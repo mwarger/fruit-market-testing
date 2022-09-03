@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { expect, test } from 'vitest';
 import { CartContextProps, CartProvider } from './CartContext';
 import { FruitList } from './ProductList';
@@ -7,9 +8,14 @@ const cartContextRender = (
 	ui: React.ReactNode,
 	{ providerProps, ...renderOptions }: any
 ) => {
-	return render(<CartProvider {...providerProps}>{ui}</CartProvider>, {
-		...renderOptions,
-	});
+	return render(
+		<MemoryRouter>
+			<CartProvider {...providerProps}>{ui}</CartProvider>
+		</MemoryRouter>,
+		{
+			...renderOptions,
+		}
+	);
 };
 
 test('should show products', () => {
@@ -17,20 +23,7 @@ test('should show products', () => {
 		addToCart: () => {},
 		removeFromCart: () => {},
 		updateProductQuantity: () => {},
-		cartItems: [
-			{
-				id: '1',
-				name: 'Product 1',
-				price: 10,
-				quantity: 1,
-			},
-			{
-				id: '2',
-				name: 'Product 2',
-				price: 20,
-				quantity: 1,
-			},
-		],
+		cartItems: [],
 	};
 
 	cartContextRender(<FruitList />, { providerProps });

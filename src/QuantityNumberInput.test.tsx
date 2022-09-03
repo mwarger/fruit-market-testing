@@ -2,32 +2,20 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { QuantityNumberInput } from './QuantityNumberInput';
 
-let value = 1;
-
-function updateValue(newValue: number) {
-	value = newValue;
-}
-
 test('should change value', () => {
-	const mock = vi.fn().mockImplementation(updateValue);
+	const mockFunction = vi.fn();
 
-	const results = render(
-		<QuantityNumberInput label='Quantity' value={value} onChange={mock} />
+	render(
+		<QuantityNumberInput label='Quantity' value={1} onChange={mockFunction} />
 	);
 
-	expect(mock).toHaveBeenCalledTimes(0);
+	expect(mockFunction).toHaveBeenCalledTimes(0);
 
 	const input = screen.getByLabelText('Quantity') as HTMLInputElement;
 
 	expect(input.value).toBe('1');
 
-	fireEvent.change(input, { target: { value: '23' } });
-	expect(mock).toHaveBeenCalledTimes(1);
-	expect(mock).toHaveBeenCalledWith(23);
-
-	results.rerender(
-		<QuantityNumberInput label='Quantity' value={value} onChange={mock} />
-	);
-
-	expect(input.value).toBe('23');
+	fireEvent.change(input, { target: { value: '2' } });
+	expect(mockFunction).toHaveBeenCalledTimes(1);
+	expect(mockFunction).toHaveBeenCalledWith(2);
 });
