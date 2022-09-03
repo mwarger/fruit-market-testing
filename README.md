@@ -1,6 +1,16 @@
 # Fruit Market
 
-The Fruit Market app shows a simple use of apps as well as component tests.
+The Fruit Market app shows a simple use of unit tests as well as component tests.
+
+## Running the App
+
+To install the dependencies, run `npm install`
+
+To run the app, run `npm run dev`
+
+To run the test, run `npm test`
+
+## Testing
 
 - Unit Tests
   - `tests` folder
