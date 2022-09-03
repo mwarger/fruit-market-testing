@@ -2,6 +2,8 @@
 
 The Fruit Market app shows a simple use of unit tests as well as component tests.
 
+This app comes in a TypeScript version and a JavaScript version.  The main (`master`) branch is written in TypeScript and the `js` branch is the JavaScript version.
+
 ## Running the App
 
 To install the dependencies, run `npm install`
