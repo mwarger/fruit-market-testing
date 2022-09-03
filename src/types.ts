@@ -8,17 +8,35 @@ export type FruitMarketItemWithQuantity = FruitMarketItem & {
 	quantity: number;
 };
 
-export type FruitApiItem = {
-	genus: string;
-	name: string;
-	id: number;
-	family: string;
-	order: string;
-	nutritions: {
-		carbohydrates: number;
-		protein: number;
-		fat: number;
-		calories: number;
-		sugar: number;
-	};
-};
+// export type FruitApiItem = {
+// 	genus: string;
+// 	name: string;
+// 	id: number;
+// 	family: string;
+// 	order: string;
+// 	nutritions: {
+// 		carbohydrates: number;
+// 		protein: number;
+// 		fat: number;
+// 		calories: number;
+// 		sugar: number;
+// 	};
+// };
+
+export interface FruitApiItem {
+	genus:      string;
+	name:       string;
+	id:         number;
+	family:     string;
+	order:      string;
+	nutritions: Nutritions;
+}
+
+export interface Nutritions {
+	carbohydrates: number;
+	protein: number;
+	fat: number;
+	calories: number;
+	sugar: number;
+}
+

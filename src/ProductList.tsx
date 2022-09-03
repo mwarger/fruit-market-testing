@@ -31,6 +31,11 @@ const fruits: Array<FruitMarketItem> = [
 		name: 'Pineapple',
 		price: 4.0,
 	},
+	{
+		id: '5',
+		name: 'Strawberry',
+		price: 2.0,
+	},
 ];
 
 export function FruitList() {

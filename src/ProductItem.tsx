@@ -34,6 +34,10 @@ export function ProductItem() {
 	}
 
 	// table data for fruit
+	return <FruitItemTable product={product} />;
+}
+
+function FruitItemTable({ product }: { product: FruitApiItem }) {
 	return (
 		<Box>
 			<Typography>Nutritional Information</Typography>
